@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconsax/iconsax.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -8,17 +9,13 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: Padding(
-          padding: EdgeInsets.all(5.r),
-          child: Image.asset(
-            "assets/images/AppLogos/AppLogo1.png",
-          ),
-        ),
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(left: 10.r, right: 10.sp),
+          padding: EdgeInsets.only(left: 16.r, right: 16.sp),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -33,43 +30,6 @@ class SignUp extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        labelText: "First Name",
-                        prefixIcon: Padding(
-                          padding: EdgeInsets.all(10.r),
-                          child: FaIcon(FontAwesomeIcons.user),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 16.w,
-                  ),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10.r)),
-                        labelText: "Last Name",
-                        prefixIcon: Padding(
-                          padding: EdgeInsets.all(10.r),
-                          child: FaIcon(FontAwesomeIcons.user),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
                 height: 16.h,
               ),
               TextField(
@@ -79,7 +39,7 @@ class SignUp extends StatelessWidget {
                   labelText: "User Name",
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(10.r),
-                    child: FaIcon(FontAwesomeIcons.userPen),
+                    child: FaIcon(FontAwesomeIcons.userAstronaut),
                   ),
                 ),
               ),
@@ -92,23 +52,8 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.r)),
                   labelText: "E-mail",
                   prefixIcon: Padding(
-                    padding: EdgeInsets.all(10.r),
-                    child: Icon(Icons.email),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r)),
-                  labelText: "Phone Number",
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.all(10.r),
-                    child: FaIcon(FontAwesomeIcons.phone),
-                  ),
+                      padding: EdgeInsets.all(10.r),
+                      child: FaIcon(FontAwesomeIcons.envelopeOpen)),
                 ),
               ),
               SizedBox(
@@ -122,16 +67,16 @@ class SignUp extends StatelessWidget {
                   labelText: "Password",
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(10.r),
-                    child: Icon(Icons.password),
+                    child: Icon(Iconsax.password_check5),
                   ),
                   suffixIcon: Padding(
                     padding: EdgeInsets.all(10.r),
-                    child: FaIcon(FontAwesomeIcons.eyeSlash),
+                    child: Icon(Iconsax.eye_slash),
                   ),
                 ),
               ),
               SizedBox(
-                height: 16.h,
+                height: 350.h,
               ),
               Row(
                 children: [
@@ -189,6 +134,8 @@ class SignUp extends StatelessWidget {
               SizedBox(
                 height: 16.h,
               ),
+
+              //TODO MAKE BUTTON LIGHT COLOR SO WHEN USER FILL ALL THE REQUIRED FIELDS THEN BUTTON AUTOMATICALLY BECOMES DARK
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -199,6 +146,8 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15.r),
                     ),
                   ),
+
+                  //TODO DIALOG BOX SHOULD BE POP UP WHEN USER ACCOUNT CREATION IS DONE THAT "ACCOUNT HAS BEEN CREATED, PLEASE LOGIN AGAIN"
                   onPressed: () {
                     Navigator.of(context).pop();
                   },

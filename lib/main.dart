@@ -23,12 +23,18 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primaryColor: Color.fromRGBO(110, 156, 186, 1),
+            colorScheme: ColorScheme.light(
+              primary: Color.fromRGBO(110, 156, 186, 1),
+            ),
+          ),
           initialRoute: '/login',
           routes: {
             "/": (context) => HomePage(),
             "/login": (context) => LoginPage(),
             "/signup": (context) => SignUp(),
-            "/password":(context) => PasswordReset(),
+            "/password": (context) => PasswordReset(),
           },
         );
       },

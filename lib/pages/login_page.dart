@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:xefag_pharmacy_app/pages/home_page.dart';
 import 'package:xefag_pharmacy_app/pages/password_reset.dart';
 import 'package:xefag_pharmacy_app/pages/sign_up.dart';
 
@@ -8,74 +11,73 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: 50.h,
+            ),
             Container(
-              height: 350.h,
-              width: double.infinity,
+              height: 150.h,
+              width: 150.w,
               decoration: BoxDecoration(
+                shape: BoxShape.circle,
                 gradient: RadialGradient(
-                  center: Alignment.topCenter,
-                  radius: 0.8.r,
+                  center: Alignment.center,
                   colors: [
                     Color.fromRGBO(76, 130, 168, 1),
                     Color.fromRGBO(110, 156, 186, 1),
                     Color.fromRGBO(147, 182, 207, 1),
                   ],
                 ),
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(50.r),
-                ),
               ),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 25.h,
-                  ),
                   // App Logo
-                  Image.asset(
-                    "assets/images/AppLogos/AppLogo.png",
-                    height: 250.h,
-                    width: 250.w,
-                  ),
-                  // App Title
-                  Text(
-                    "Xefag",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w800,
-                      fontSize: 45.sp,
-                      letterSpacing: 3,
-                      color: Colors.white,
+                  Center(
+                    child: Image.asset(
+                      "assets/images/AppLogos/AppLogo.png",
+                      height: 150.h,
+                      width: 150.w,
                     ),
                   ),
                 ],
               ),
             ),
+            SizedBox(
+              height: 10.h,
+            ),
             // Login info
             Padding(
-              padding: EdgeInsets.only(left: 32.r, right: 32.r),
+              padding: EdgeInsets.only(left: 16.r, right: 16.r),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
                     height: 20.h,
                   ),
-                  Text(
-                    "Welcome Back!",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 30.sp,
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Welcome Back!",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 30.sp,
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 5.h,
                   ),
-                  Text(
-                    "To get started, sign in to your account.",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16.sp,
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "To get started, sign in to your account.",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -84,26 +86,16 @@ class LoginPage extends StatelessWidget {
 
                   // User Email
                   TextField(
+                    // this will automatically change when user clicks on textfield
+                    // Note : if you are using focusedBorder then border widget is not required
+                    // but the border will not be visible so using enabledBorder , by defualt every textfield is enabled border
+
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email),
-                      hintText: "Enter your Email",
-                      // this will automatically change when user clicks on textfield
-                      // Note : if you are using focusedBorder then border widget is not required
-                      // but the border will not be visible so using enabledBorder , by defualt every textfield is enabled border
-                      focusedBorder: OutlineInputBorder(
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.r),
-                        borderSide: BorderSide(
-                          color: Color.fromRGBO(110, 156, 186, 1),
-                          width: 3.w,
-                        ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.r),
-                        borderSide: BorderSide(
-                          color: Colors.black,
-                          width: 1.w,
-                        ),
-                      ),
+                      labelText: "Enter your Email",
+                      prefixIcon: Icon(Icons.email_outlined),
                     ),
                   ),
                   SizedBox(
@@ -111,37 +103,41 @@ class LoginPage extends StatelessWidget {
                   ),
                   // User Password
                   TextField(
+                    obscureText: true,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.password),
+                      prefixIcon: Icon(Iconsax.password_check),
                       suffixIcon: IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.remove_red_eye),
+                        icon: Icon(Iconsax.eye_slash),
                       ),
-                      hintText: "Enter your Password",
-                      focusedBorder: OutlineInputBorder(
+                      border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.r),
-                        borderSide: BorderSide(
-                          color: Color.fromRGBO(110, 156, 186, 1),
-                          width: 3.w,
-                        ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.r),
-                        borderSide: BorderSide(
-                          color: Colors.black,
-                          width: 1.w,
-                        ),
-                      ),
+                      labelText: "Enter your Password",
                     ),
+                  ),
+                  SizedBox(
+                    height: 3.h,
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => PasswordReset(),
-                          ),
+                        // FORGET PASSWORD BOTTOM SHEET
+                        showModalBottomSheet(
+                          elevation: 5,
+                          enableDrag: true,
+                          useSafeArea: true,
+                          showDragHandle: true,
+                          backgroundColor: Colors.white,
+                          context: context,
+                          builder: (context) {
+                            return SizedBox(
+                              height: double.infinity,
+                              width: double.infinity,
+                              child: PasswordReset(),
+                            );
+                          },
                         );
                       },
                       child: Text(
@@ -156,16 +152,26 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: 30.h,
                   ),
+                  //TODO  MAKE BUTTON LIGHT COLOR SO USER WHEN FILLED OUT ALL FIELDS THEN IT BECOMES DARK
+                  // SIGN IN BUTTON
                   SizedBox(
-                    width: 200.w,
+                    width: double.infinity,
                     height: 50.h,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromRGBO(110, 156, 186, 1),
-                      ),
-                      onPressed: () {},
+                          backgroundColor: Color.fromRGBO(110, 156, 186, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.r),
+                          )),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         "Sign in",
                         style: TextStyle(
@@ -196,9 +202,53 @@ class LoginPage extends StatelessWidget {
                           "Sign Up",
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
-                            fontSize: 14.sp,
+                            fontSize: 16.sp,
                             color: Color.fromRGBO(110, 156, 186, 1),
                           ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Text(
+                    "---------- or ----------",
+                    style: TextStyle(fontSize: 15.sp),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      OutlinedButton.icon(
+                        style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                        ),
+                        onPressed: () {},
+                        label: FaIcon(
+                          FontAwesomeIcons.google,
+                          color: Colors.black,
+                          size: 15,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20.w,
+                      ),
+                      OutlinedButton.icon(
+                        style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                        ),
+                        onPressed: () {},
+                        label: FaIcon(
+                          FontAwesomeIcons.facebook,
+                          color: Colors.black,
+                          size: 15,
                         ),
                       ),
                     ],
