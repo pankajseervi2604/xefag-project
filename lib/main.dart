@@ -24,10 +24,11 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primaryColor: Color.fromRGBO(110, 156, 186, 1),
+            primaryColor: Colors.black,
             colorScheme: ColorScheme.light(
-              primary: Color.fromRGBO(110, 156, 186, 1),
+              primary: Colors.black,
             ),
+            fontFamily: "opensans",
           ),
           initialRoute: '/login',
           routes: {

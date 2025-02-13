@@ -15,38 +15,14 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 50.h,
-            ),
-            Container(
-              height: 150.h,
-              width: 150.w,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  center: Alignment.center,
-                  colors: [
-                    Color.fromRGBO(76, 130, 168, 1),
-                    Color.fromRGBO(110, 156, 186, 1),
-                    Color.fromRGBO(147, 182, 207, 1),
-                  ],
-                ),
+            Padding(
+              padding: EdgeInsets.only(top: 32.r),
+              child: Image.asset(
+                "assets/images/login illusturation.png",
+                fit: BoxFit.fill,
+                height: 250.h,
+                width: 300.w,
               ),
-              child: Column(
-                children: [
-                  // App Logo
-                  Center(
-                    child: Image.asset(
-                      "assets/images/AppLogos/AppLogo.png",
-                      height: 150.h,
-                      width: 150.w,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10.h,
             ),
             // Login info
             Padding(
@@ -96,6 +72,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       labelText: "Enter your Email",
                       prefixIcon: Icon(Icons.email_outlined),
+                      suffix: Text("@gmail.com"),
                     ),
                   ),
                   SizedBox(
@@ -152,7 +129,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 30.h,
+                    height: 15.h,
                   ),
                   //TODO  MAKE BUTTON LIGHT COLOR SO USER WHEN FILLED OUT ALL FIELDS THEN IT BECOMES DARK
                   // SIGN IN BUTTON
@@ -161,7 +138,7 @@ class LoginPage extends StatelessWidget {
                     height: 50.h,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromRGBO(110, 156, 186, 1),
+                          backgroundColor: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.r),
                           )),
@@ -202,8 +179,9 @@ class LoginPage extends StatelessWidget {
                           "Sign Up",
                           style: TextStyle(
                             fontWeight: FontWeight.w800,
-                            fontSize: 16.sp,
-                            color: Color.fromRGBO(110, 156, 186, 1),
+                            color: Colors.black,
+                            decoration: TextDecoration.underline,
+                            decorationThickness: 2,
                           ),
                         ),
                       ),

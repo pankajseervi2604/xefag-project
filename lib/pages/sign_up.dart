@@ -38,8 +38,11 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.r)),
                   labelText: "User Name",
                   prefixIcon: Padding(
-                    padding: EdgeInsets.all(10.r),
-                    child: FaIcon(FontAwesomeIcons.userAstronaut),
+                    padding: EdgeInsets.all(15.r),
+                    child: FaIcon(
+                      FontAwesomeIcons.userAstronaut,
+                      size: 20,
+                    ),
                   ),
                 ),
               ),
@@ -52,8 +55,13 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.r)),
                   labelText: "E-mail",
                   prefixIcon: Padding(
-                      padding: EdgeInsets.all(10.r),
-                      child: FaIcon(FontAwesomeIcons.envelopeOpen)),
+                    padding: EdgeInsets.all(15.r),
+                    child: FaIcon(
+                      FontAwesomeIcons.envelopeOpen,
+                      size: 18,
+                    ),
+                  ),
+                  suffix: Text("@gmail.com"),
                 ),
               ),
               SizedBox(
@@ -66,12 +74,18 @@ class SignUp extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10.r)),
                   labelText: "Password",
                   prefixIcon: Padding(
-                    padding: EdgeInsets.all(10.r),
-                    child: Icon(Iconsax.password_check5),
+                    padding: EdgeInsets.all(15.r),
+                    child: Icon(
+                      Iconsax.password_check5,
+                      size: 20,
+                    ),
                   ),
                   suffixIcon: Padding(
                     padding: EdgeInsets.all(10.r),
-                    child: Icon(Iconsax.eye_slash),
+                    child: Icon(
+                      Iconsax.eye_slash,
+                      size: 20,
+                    ),
                   ),
                 ),
               ),
@@ -141,7 +155,7 @@ class SignUp extends StatelessWidget {
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(110, 156, 186, 1),
+                    backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.r),
                     ),
