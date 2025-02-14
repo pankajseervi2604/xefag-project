@@ -39,7 +39,7 @@ class LoginPage extends StatelessWidget {
                       "Welcome Back!",
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 30.sp,
+                        fontSize: 24.sp,
                       ),
                     ),
                   ),
@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
                       "To get started, sign in to your account.",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: 16.sp,
+                        fontSize: 14.sp,
                       ),
                     ),
                   ),
@@ -71,7 +71,10 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       labelText: "Enter your Email",
-                      prefixIcon: Icon(Icons.email_outlined),
+                      prefixIcon: Icon(
+                        Icons.email_outlined,
+                        size: 20,
+                      ),
                       suffix: Text("@gmail.com"),
                     ),
                   ),
@@ -82,10 +85,16 @@ class LoginPage extends StatelessWidget {
                   TextField(
                     obscureText: true,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Iconsax.password_check),
+                      prefixIcon: Icon(
+                        Iconsax.password_check,
+                        size: 20,
+                      ),
                       suffixIcon: IconButton(
                         onPressed: () {},
-                        icon: Icon(Iconsax.eye_slash),
+                        icon: Icon(
+                          Iconsax.eye_slash,
+                          size: 20,
+                        ),
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.r),

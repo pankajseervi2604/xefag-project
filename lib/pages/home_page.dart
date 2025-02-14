@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:xefag_pharmacy_app/pages/cart_page.dart';
+import 'package:xefag_pharmacy_app/pages/contact_page.dart';
+import 'package:xefag_pharmacy_app/pages/products_page.dart';
+import 'package:xefag_pharmacy_app/pages/profile_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,8 +27,8 @@ class HomePage extends StatelessWidget {
                   children: [
                     Image.asset(
                       "assets/images/AppLogos/AppLogo.png",
-                      height: 50.h,
-                      width: 50.w,
+                      height: 35.h,
+                      width: 35.w,
                       color: Colors.black,
                     ),
                     SizedBox(
@@ -46,7 +50,13 @@ class HomePage extends StatelessWidget {
                       style: IconButton.styleFrom(
                         iconSize: 20,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ProfilePage(),
+                          ),
+                        );
+                      },
                       icon: Icon(Iconsax.user4),
                     ),
                     SizedBox(
@@ -57,7 +67,13 @@ class HomePage extends StatelessWidget {
                       style: IconButton.styleFrom(
                         iconSize: 20,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => CartPage(),
+                          ),
+                        );
+                      },
                       icon: FaIcon(FontAwesomeIcons.bagShopping),
                     ),
                   ],
@@ -78,7 +94,13 @@ class HomePage extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                       elevation: 0.1,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => ProductsPage(),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Products",
                       style: TextStyle(
@@ -100,7 +122,13 @@ class HomePage extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                       elevation: 0.1,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => ContactPage(),
+                        ),
+                      );
+                    },
                     child: Text(
                       "Contact",
                       style: TextStyle(
@@ -132,6 +160,13 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               child: Stack(
                 children: [
+                  Transform.scale(
+                    scale: 1.05,
+                    child: Image.asset(
+                      "assets/images/AppLogos/AppLogo.png",
+                      color: Colors.black12,
+                    ),
+                  ),
                   Positioned(
                     left: 70,
                     child: Text(
