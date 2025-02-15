@@ -1,9 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:xefag_pharmacy_app/pages/login_page.dart';
 import 'package:xefag_pharmacy_app/widgets/profile_category.dart';
 import 'package:xefag_pharmacy_app/widgets/profile_photo_edit.dart';
@@ -50,15 +47,15 @@ class ProfilePage extends StatelessWidget {
                     left: 95,
                     child: CircleAvatar(
                       radius: 80.r,
-                      backgroundImage:
-                          AssetImage("assets/images/profile photo.png"),
+                      backgroundImage: NetworkImage(
+                          "https://avatar.iran.liara.run/public/boy"),
                       backgroundColor: Colors.transparent,
                     ),
                   ),
                   Positioned(
-                    top: 155,
+                    top: 120,
                     left: 210,
-                    child: IconButton.outlined(
+                    child: IconButton.filled(
                       onPressed: () {
                         showModalBottomSheet(
                           enableDrag: true,
