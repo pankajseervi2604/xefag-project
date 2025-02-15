@@ -66,6 +66,7 @@ flutter:
     - assets/images/AppLogos/
     - assets/images/products/
     - assets/images/login illusturation.png
+    - assets/images/profile photo.png
     - assets/images/profiles/
 
   # An image asset can refer to one or more resolution-specific "variants", see

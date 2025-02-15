@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:xefag_pharmacy_app/pages/cart_page.dart';
+import 'package:xefag_pharmacy_app/pages/profile_page.dart';
 import 'package:xefag_pharmacy_app/widgets/product_component.dart';
 
 class ProductsPage extends StatelessWidget {
@@ -27,7 +29,13 @@ class ProductsPage extends StatelessWidget {
             style: IconButton.styleFrom(
               iconSize: 20,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => ProfilePage(),
+                ),
+              );
+            },
             icon: Icon(Iconsax.user4),
           ),
           SizedBox(
@@ -38,7 +46,13 @@ class ProductsPage extends StatelessWidget {
             style: IconButton.styleFrom(
               iconSize: 20,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => CartPage(),
+                ),
+              );
+            },
             icon: FaIcon(FontAwesomeIcons.bagShopping),
           ),
           SizedBox(

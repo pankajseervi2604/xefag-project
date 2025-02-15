@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
             ),
             fontFamily: "opensans",
           ),
-          initialRoute: '/login',
+          initialRoute: '/profile',
           routes: {
             "/": (context) => HomePage(),
             "/login": (context) => LoginPage(),
@@ -42,8 +42,8 @@ class MyApp extends StatelessWidget {
             "/password": (context) => PasswordReset(),
             "/products": (context) => ProductsPage(),
             "/contacts": (context) => ContactPage(),
-            "/profile" : (context) => ProfilePage(),
-            "/cart" : (context) => CartPage(),
+            "/profile": (context) => ProfilePage(),
+            "/cart": (context) => CartPage(),
           },
         );
       },
