@@ -92,6 +92,7 @@ class ProductComponent extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => ProductDetailsPage(
                       imageSource: imageUrl,
+                      productName: bottleName,
                     ),
                   ),
                 );
@@ -100,6 +101,7 @@ class ProductComponent extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => ProductDetailsPage(
                       imageSource: imageUrl,
+                      productName: bottleName,
                     ),
                   ),
                 );

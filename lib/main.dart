@@ -34,7 +34,9 @@ class MyApp extends StatelessWidget {
             ),
             fontFamily: "opensans",
           ),
-          initialRoute: '/login',
+          themeMode: ThemeMode.light,
+          darkTheme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
+          initialRoute: '/products',
           routes: {
             "/": (context) => HomePage(),
             "/login": (context) => LoginPage(),

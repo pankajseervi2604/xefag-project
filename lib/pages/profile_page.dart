@@ -12,6 +12,15 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(8.r),
+            child: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.dark_mode_outlined),
+            ),
+          )
+        ],
         title: Text(
           "Profile",
           style: TextStyle(
