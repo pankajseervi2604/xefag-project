@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "508365014956",
+    "project_id": "xefag-db150",
+    "storage_bucket": "xefag-db150.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508365014956:android:5fac6a0a8c19d8c930dc09",
+        "android_client_info": {
+          "package_name": "com.example.xefag_pharmacy_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIZ_DOvh5nsj-UhT7XtD7qn-ZsrfTb2VM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

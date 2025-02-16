@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:xefag_pharmacy_app/firebase_options.dart';
 import 'package:xefag_pharmacy_app/pages/cart_page.dart';
 import 'package:xefag_pharmacy_app/pages/contact_page.dart';
 import 'package:xefag_pharmacy_app/pages/home_page.dart';
@@ -9,7 +11,11 @@ import 'package:xefag_pharmacy_app/pages/products_page.dart';
 import 'package:xefag_pharmacy_app/pages/profile_page.dart';
 import 'package:xefag_pharmacy_app/pages/sign_up.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -36,7 +42,7 @@ class MyApp extends StatelessWidget {
           ),
           themeMode: ThemeMode.light,
           darkTheme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
-          initialRoute: '/products',
+          initialRoute: '/login',
           routes: {
             "/": (context) => HomePage(),
             "/login": (context) => LoginPage(),
