@@ -11,11 +11,9 @@ import 'package:xefag_pharmacy_app/pages/products_page.dart';
 import 'package:xefag_pharmacy_app/pages/profile_page.dart';
 import 'package:xefag_pharmacy_app/pages/sign_up.dart';
 
-void main(List<String> args) async {
+void main(List<String> args) async {  
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
