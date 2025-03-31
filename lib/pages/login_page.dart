@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -9,12 +8,6 @@ import 'package:xefag_pharmacy_app/pages/sign_up.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-
-  void createUserNameAndPassword() {
-    final userData = FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: "othiraja@gmail.com", password: "12345678");
-    print(userData);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -159,7 +152,6 @@ class LoginPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.r),
                           )),
                       onPressed: () {
-                        createUserNameAndPassword();
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => HomePage(),
